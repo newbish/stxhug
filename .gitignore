@@ -2,3 +2,5 @@
 data/css/
 node_modules/
 public/
+
+static/css/scss/

@@ -22,22 +22,52 @@
                                 </div>
                                 <div class="columns">
                                     <div class="column is-3">Location:</div>
-                                    <div class="column">{{ .Param "Location" }}<br/>{{ .Param "Address" }}</div>
+                                    <div class="column">
+                                        {{ .Param "Location" }}
+                                        {{ if isset .Params "location_map_url" }}
+                                            <a href="{{ .Param "Location_Map_URL" }}" target="_blank">(map)</a>
+                                        {{ end }}
+                                        <br/>
+                                        {{ .Param "Address" }}</div>
                                 </div>
-                                <div class="columns">
-                                    <div class="column is-3">Cost:</div>
-                                    <div class="column">{{ .Param "Cost" }}</div>
-                                </div>
+                                {{ if isset .Params "cost" }}
+                                    <div class="columns">
+                                        <div class="column is-3">Cost:</div>
+                                        <div class="column">{{ .Param "Cost" }}</div>
+                                    </div>
+                                {{ end }}
                             </div>
+                            {{ if isset .Params "post_meeting" }}
+                                <div class="tile is-child">
+                                    <p class="title">Happy Hour</p>
+                                    <div class="columns">
+                                        <div class="column is-3">Place/Time:</div>
+                                        <div class="column">{{ .Param "Post_Meeting" }}</div>
+                                    </div>
+                                    {{ if isset .Params "post_location" }}
+                                        <div class="columns">
+                                            <div class="column is-3">Location:</div>
+                                            <div class="column">{{ .Param "Post_Location" }}</div>
+                                        </div>
+                                    {{ end }}
+                                    {{ if isset .Params "post_cost" }}
+                                        <div class="columns">
+                                            <div class="column is-3">Cost:</div>
+                                            <div class="column">{{ .Param "Post_Cost" }}</div>
+                                        </div>
+                                    {{ end }}
+                                </div>
+                            {{ end }}
                         </div>
                         <div class="tile is-parent is-vertical">
                             <div class="tile is-child box">
                                 <img src="{{ .Param "Location_Image" }}" alt="{{ .Param "Location" }}" />
                             </div> 
+                            {{ if (isset .Params "location_map")}}
                             <div class="tile is-child box">
-                                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d26752.098311844322!2d-96.8351837!3d33.0561433!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xaef2601dc70d7bd3!2sPINSTACK+Plano!5e0!3m2!1sen!2sus!4v1504905086881" width="100%" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
-                                    
-                            </div> 
+                                <iframe src="{{ .Param "Location_Map" }}" width="100%" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>    
+                            </div>
+                            {{ end }}
                         </div>
                     </div>
                 {{ end }}

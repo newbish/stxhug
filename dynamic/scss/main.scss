@@ -83,6 +83,7 @@ hr {
     background: -moz-linear-gradient(black, transparent); /* For Firefox 3.6 to 15 */
     background: linear-gradient(black, transparent); /* Standard syntax */
 }
+.hero h1 { color: white;}
 .navbar-brand a {
     color: white;
     :hover {
@@ -92,9 +93,6 @@ hr {
 }
 .navbar-item a:hover {
     background-color: darkslategrey !important;
-}
-.head {
-    height: 150;
 }
 .bg-img { 
     background-image: url('/img/houston-skyline.png');
