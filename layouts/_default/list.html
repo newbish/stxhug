@@ -1,0 +1,25 @@
+{{ partial "header.html" .}}
+        <section class="section">
+            {{ range (sort .Data.Pages "Date" "asc") }}
+                <div class="hero is-bold is-light">
+                    <div class="hero-body">
+                        <div class="container">
+                            <h1 class="title">{{ .Title }}</h1>
+                            <div class="columns">
+                                <div class="column">
+                                    <figure class="media-left">
+                                        <p class="image is-300x300">
+                                            <img src="http://bulma.io/images/placeholders/128x128.png">
+                                        </p>
+                                    </figure>
+                                </div>
+                                <div class="column">
+                                    {{ .Content }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {{ end }}
+        </section>
+{{ partial "footer.html" . }}
