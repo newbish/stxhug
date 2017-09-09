@@ -1,12 +1,15 @@
 {{ partial "header.html" .}}
         <section class="section">
             {{ range (sort .Data.Pages "Date" "asc") }}
-                <div class="hero is-bold is-light">
+                <div class="hero is-bold is-light ">
                     <div class="hero-body">
                         <div class="container">
-                                {{ .Content }}
+                            <div class="title">{{ .Title }}</div></div>
                             </div>
                         </div>
+                    </div>
+                    <div class="container">
+                        {{ .Content }}
                     </div>
                 </div>
                 <br />
