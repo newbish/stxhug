@@ -1,0 +1,28 @@
+{
+  "name": "stxhug.org",
+  "version": "1.0.0",
+  "description": "STxHUG",
+  "main": "index.js",
+  "devDependencies": {
+    "del": "",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-hash": "^4.1.1",
+    "gulp-sass": "^2.1.1",
+    "gulp-shell": "^0.5.1",
+    "gulp-watch": "^4.3.5"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://bitbucket.org/tevpro/tevpro-hugo.git"
+  },
+  "author": "Keith Kikta <keith.kikta@tevpro.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://bitbucket.org/tevpro/tevpro-hugo/issues"
+  },
+  "homepage": "https://stxhug.org"
+}

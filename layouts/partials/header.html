@@ -1,0 +1,39 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Tevpro - IT Consulting Services</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="apple-touch-icon" href="/favicon.ico">
+        <!-- Place favicon.ico in the root directory -->
+
+        <link rel="stylesheet" href="/css/scss/{{ index .Site.Data.css.hash "bulma.css" }}">
+        <link rel="stylesheet" href="/css/normalize.css">
+        <link rel="stylesheet" href="/css/scss/{{ index .Site.Data.css.hash "main.css" }}">
+        <link rel="stylesheet" href="/css/scss/{{ index .Site.Data.css.hash "font-awesome.css" }}">
+        <script src="/js/vendor/modernizr-2.8.3.min.js"></script>
+        <style>
+
+        </style>
+    </head>
+    <body>
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <section class="head hero is-medium is-bold">
+        {{ partial "nav.html" . }}
+        <div class="hero-body bg-img ">
+            <div class="container has-text-centered">
+                <h1 class="title">
+                    {{ if .Title }}
+                        {{ .Title }}
+                    {{ else }}
+                        Next Meeting
+                    {{ end }}
+                </h1>
+            </div>
+        </div>
+    </section>

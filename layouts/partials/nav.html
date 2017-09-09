@@ -1,0 +1,37 @@
+<nav class="navbar navbar-isfixed">
+    <div class="navbar-brand">
+        <a href="/">
+            <img src="/img/STxHUG.png" alt="South Texas Hyperion User Group Logo" class="image is-64x64 is-pulled-left">
+            <div>
+                <span style="padding-left: 1em; white-space: nowrap;">South Texas</span>
+                <span style="padding-left: 1em; white-space: nowrap;">Hyperion User Group</span>
+            </div>
+        </a>
+        <div class="navbar-burger burger" data-target="navMenu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    {{ $currentPage := . }}
+    <div id="navMenu" class="navbar-menu">
+        <div class="navbar-end">
+            <a href="/" class="navbar-item">Next Meeting</a>
+            {{ range sort .Site.Menus.main "Weight" "asc" }}
+            {{ if and (.Name) (ge .Weight 0) }}
+            {{ if .HasChildren }}<div class="navbar-item has-dropdown is-hoverable">{{ end }}
+                <a href="{{ .URL }}" class="navbar-item{{ if .HasChildren }} navbar-link{{ end }}{{ if or ($.IsMenuCurrent "main" .) ($.HasMenuCurrent "main" .) }} is-active{{ end }}">{{ .Name }}</a>
+                    {{ if .HasChildren }}
+                    <div class="navbar-dropdown">
+                        <a href="{{ .URL }}" class="navbar-item">Overview</a>
+                        {{ range sort .Children "Weight" "asc" }}
+                        <a class="navbar-item" {{ if .URL }} href="{{ .URL }}" {{ end }}>{{ .Name }}</a>
+                        {{ end }}
+                    </div>
+                    {{ end }}
+            {{ if .HasChildren }}</div>{{ end }}
+            {{ end }}
+            {{ end }}
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,5 @@
+baseURL = "http://stxhug.org/"
+languageCode = "en-us"
+title = "South Texas Hyperion User Group"
+name = "South Texas Hyperion User Group"
+canonifyurls= false
