@@ -17,6 +17,9 @@
     <div id="navMenu" class="navbar-menu">
         <div class="navbar-end">
             <a href="/" class="navbar-item">Next Meeting</a>
+            {{ range first 1 (where .Site.Pages.ByPublishDate.Reverse "Section" "meeting") }}
+                <a href="{{ .Param "register" }}" title="{{ .Title }}" class="navbar-item">Register</a> 
+            {{ end }}
             {{ range sort .Site.Menus.main "Weight" "asc" }}
             {{ if and (.Name) (ge .Weight 0) }}
             {{ if .HasChildren }}<div class="navbar-item has-dropdown is-hoverable">{{ end }}
