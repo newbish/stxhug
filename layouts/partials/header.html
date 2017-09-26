@@ -27,14 +27,14 @@
         <!-- Place favicon.ico in the root directory -->
         {{ range first 1 (where .Site.Pages.ByPublishDate.Reverse "Section" "meeting") }}
         <meta itemprop="name" content="{{ .Param "Title" }}">
-        <meta itemprop="description" content="Mark you calendar, the next South Texas Hyperion User Group get together will take place on {{ .Param "Meeting" }} at {{ .Param "Location" }}">
+        <meta itemprop="description" content="Mark your calendar, the next South Texas Hyperion User Group get together will take place on {{ .Param "Meeting" }} at {{ .Param "Location" }}">
         <meta itemprop="image" content="https://stxhug.org/img/STxHUG-circ.png">
         
         <!-- Twitter Card data -->
         <meta name="twitter:card" content="summary">
         <meta name="twitter:site" content="@STxHUG">
         <meta name="twitter:title" content="{{ .Param "Title" }}">
-        <meta name="twitter:description" content="Mark you calendar, the next South Texas Hyperion User Group get together will take place on {{ .Param "Meeting" }} at {{ .Param "Location" }}">
+        <meta name="twitter:description" content="Mark your calendar, the next South Texas Hyperion User Group get together will take place on {{ .Param "Meeting" }} at {{ .Param "Location" }}">
         <meta name="twitter:creator" content="@STxHUG">
         <!-- Twitter summary card with large image must be at least 280x150px -->
         <meta name="twitter:image:src" content="https://stxhug.org/img/favicon/apple-icon-144x144.png">
@@ -45,7 +45,7 @@
         <meta property="og:url" content="https://stxhug.org" />
         <meta property="og:image" content="https://stxhug.org/img/STxHUG-circ.png" />
         <meta property="og:image" content="https://stxhug.org/{{ .Param "Location_Image" }}" />
-        <meta property="og:description" content="Mark you calendar, the next South Texas Hyperion User Group get together will take place on {{ .Param "Meeting" }} at {{ .Param "Location" }}" />
+        <meta property="og:description" content="Mark your calendar, the next South Texas Hyperion User Group get together will take place on {{ .Param "Meeting" }} at {{ .Param "Location" }}" />
         <meta property="og:site_name" content="South Texas Hyperion Users Group" />
         <meta property="article:published_time" content="{{ .Date.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}" />
         <meta property="article:modified_time" content="{{ now.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}" />
