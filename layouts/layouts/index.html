@@ -60,6 +60,25 @@
                             {{ end }}
                         </div>
                         <div class="tile is-parent is-vertical">
+                            <div class="tile is-child">
+                                <div class="is-pulled-right">
+                                    <a class="icon" href="https://twitter.com/intent/tweet?text=Mark%20your%20calendar,%20STxHUG%20is%20meeting%20{{ .Param "Meeting" | safeURL }}%20at%20{{ .Param "Location" | safeURL}}&url=https://stxhug.org/"
+                                        onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                                        <i class="fa fa-twitter"></i>
+                                        <span class="hidden">Twitter</span>
+                                    </a>
+                                    <a class="icon" href="https://www.linkedin.com/shareArticle?mini=true&url=https://stxhug.org/&title=Mark%20your%20calendar,%20STxHUG%20is%20meeting%20{{ .Param "Meeting" | safeURL }}%20at%20{{ .Param "Location" | safeURL}}&summary=&source="
+                                        onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                                        <i class="fa fa-linkedin"></i>
+                                        <span class="hidden">LinkedIn</span>
+                                    </a>
+                                    <a class="icon" href="https://www.facebook.com/sharer/sharer.php?u=https://stxhug.org/"
+                                        onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                                        <i class="fa fa-facebook"></i>
+                                        <span class="hidden">Facebook</span>
+                                    </a>
+                                </div>
+                            </div>                             
                             <div class="tile is-child box">
                                 <img src="{{ .Param "Location_Image" }}" alt="{{ .Param "Location" }}" />
                             </div> 
