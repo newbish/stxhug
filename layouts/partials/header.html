@@ -46,8 +46,8 @@
         <meta property="og:image" content="https://stxhug.org/img/STxHUG-circ.png" />
         <meta property="og:description" content="Mark you calendar, the next South Texas Hyperion User Group get together will take place on {{ .Param "Meeting" }} at {{ .Param "Location" }}" />
         <meta property="og:site_name" content="South Texas Hyperion Users Group" />
-        <meta property="article:published_time" content="{{ .Param "Date" }}" />
-        <meta property="article:modified_time" content="{{ .Hugo.BuildDate }}" />
+        <meta property="article:published_time" content="{{ .Date.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}" />
+        <meta property="article:modified_time" content="{{ now.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}" />
         <meta property="article:section" content="Oracle EPM" />
         <meta property="article:tag" content="Oracle EPM, Hyperion, ODTUG, Essbase" />
         {{ end }}
