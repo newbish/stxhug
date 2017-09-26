@@ -25,6 +25,33 @@
         <meta name="msapplication-TileImage" content="/img/favicon/ms-icon-144x144.png">
         <meta name="theme-color" content="#ffffff">
         <!-- Place favicon.ico in the root directory -->
+        {{ range first 1 (where .Site.Pages.ByPublishDate.Reverse "Section" "meeting") }}
+        <meta itemprop="name" content="{{ .Param "Title" }}">
+        <meta itemprop="description" content="{{ .Param "meeting" }} at {{ .Param "address" }}">
+        <meta itemprop="image" content="https://stxhug.org/img/STxHUG-circ.png">
+        
+        <!-- Twitter Card data -->
+        <meta name="twitter:card" content="https://stxhug.org/img/STxHUG-circ.png">
+        <meta name="twitter:site" content="@STxHUG">
+        <meta name="twitter:title" content="{{ .Param "Title" }}">
+        <meta name="twitter:description" content="{{ .Param "meeting" }} at {{ .Param "address" }}">
+        <meta name="twitter:creator" content="@STxHUG">
+        <!-- Twitter summary card with large image must be at least 280x150px -->
+        <meta name="twitter:image:src" content="https://stxhug.org/img/favicon/apple-icon-144x144.png">
+        
+        <!-- Open Graph data -->
+        <meta property="og:title" content="{{ .Param "Title" }}" />
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content="https://stxhug.org" />
+        <meta property="og:image" content="https://stxhug.org/img/STxHUG-circ.png" />
+        <meta property="og:description" content="{{ .Param "meeting" }} at {{ .Param "address" }}" />
+        <meta property="og:site_name" content="South Texas Hyperion Users Group" />
+        <meta property="article:published_time" content="{{ .Param "Date" }}" />
+        <meta property="article:modified_time" content="{{ .Hugo.BuildDate }}" />
+        <meta property="article:section" content="Oracle EPM" />
+        <meta property="article:tag" content="Oracle EPM, Hyperion, ODTUG, Essbase" />
+        <meta property="fb:admins" content="Facebook numberic ID" />
+        {{ end }}
 
         <link rel="stylesheet" href="/css/scss/{{ index .Site.Data.css.hash "bulma.css" }}">
         <link rel="stylesheet" href="/css/normalize.css">
