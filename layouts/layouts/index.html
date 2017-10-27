@@ -1,7 +1,7 @@
 {{ partial "header.html" .}}
         <section class="section">
             <div class="container content">
-                {{ range (where (sort .Data.Pages "Date" "asc") "Type" "meeting") }}
+                {{ range first 1 (where (sort .Data.Pages "Date" "desc") "Type" "meeting") }}
                     <div class="tile is-ancestor">
                         <div class="tile is-parent is-vertical">
                             <div class="tile is-child">
