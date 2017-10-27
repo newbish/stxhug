@@ -8,9 +8,12 @@
                             <div class="columns">
                                 <div class="column">
                                     <figure class="media-left">
-                                        <p class="image is-300x300">
-                                            <img src="http://bulma.io/images/placeholders/128x128.png">
-                                        </p>
+                                        <ul id="slides">
+                                            {{ $isfirst := index (.Params.Photos) 0 }}
+                                            {{ range .Params.Photos }}
+                                                <li class="slide{{ if eq . $isfirst }} showing{{ end }}"><img src="/{{ . }}" /></li>
+                                            {{ end }}
+                                        </ul>
                                     </figure>
                                 </div>
                                 <div class="column">
