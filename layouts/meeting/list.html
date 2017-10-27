@@ -1,6 +1,6 @@
 {{ partial "header.html" .}}
         <section class="section">
-            {{ range (where (sort .Data.Pages "Date" "asc") "Date" "<" .Hugo.BuildDate ) }}
+            {{ range after 1 (where (sort .Data.Pages "Date" "desc") "Type" "meeting") }}
                 <div class="hero is-bold is-light">
                     <div class="hero-body">
                         <div class="container">
