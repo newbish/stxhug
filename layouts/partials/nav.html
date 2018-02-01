@@ -17,8 +17,10 @@
     <div id="navMenu" class="navbar-menu">
         <div class="navbar-end">
             <a href="/" class="navbar-item">Next Meeting</a>
-            {{ range first 1 (where .Site.Pages.ByPublishDate.Reverse "Section" "meeting") }}
-                <a href="{{ .Param "register" }}" title="{{ .Title }}" class="navbar-item">Register</a> 
+            {{ range last 2 (where .Site.Pages.ByPublishDate.Reverse "Section" "meeting") }}
+                {{ if ne .File.LogicalName "_index.md" }}
+                    <a href="{{ .Param "register" }}" title="{{ .Title }}" class="navbar-item">Register</a> 
+                {{ end }}
             {{ end }}
             {{ range sort .Site.Menus.main "Weight" "asc" }}
             {{ if and (.Name) (ge .Weight 0) }}
@@ -37,4 +39,4 @@
             {{ end }}
         </div>
     </div>
-</nav>
+</nav> 
