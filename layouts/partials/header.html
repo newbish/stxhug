@@ -25,7 +25,8 @@
         <meta name="msapplication-TileImage" content="/img/favicon/ms-icon-144x144.png">
         <meta name="theme-color" content="#ffffff">
         <!-- Place favicon.ico in the root directory -->
-        {{ range first 1 (where .Site.Pages.ByPublishDate.Reverse "Section" "meeting") }}
+        {{ range last 2 (where .Site.Pages.ByPublishDate.Reverse "Section" "meeting") }}
+            {{ if ne .File.LogicalName "_index.md" }}
         <meta itemprop="name" content="{{ .Param "Title" }}">
         <meta itemprop="description" content="Mark your calendar, the next South Texas Hyperion User Group get together will take place on {{ .Param "Meeting" }} at {{ .Param "Location" }}">
         <meta itemprop="image" content="https://stxhug.org/img/STxHUG-circ.png">
@@ -51,6 +52,7 @@
         <meta property="article:modified_time" content="{{ now.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}" />
         <meta property="article:section" content="Oracle EPM" />
         <meta property="article:tag" content="Oracle EPM, Hyperion, ODTUG, Essbase" />
+            {{ end }}
         {{ end }}
 
         <link rel="stylesheet" href="/css/scss/{{ index .Site.Data.css.hash "bulma.css" }}">
