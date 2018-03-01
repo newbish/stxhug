@@ -30,12 +30,13 @@ if ($burgers.length > 0) {
 function getAll(selector) {
   return Array.prototype.slice.call(document.querySelectorAll(selector), 0);
 }
-var slides = document.querySelectorAll('#slides .slide');
-var currentSlide = 0;
-var slideInterval = setInterval(nextSlide,3700);
-
-function nextSlide() {
+var deck = document.querySelectorAll('#slides');
+deck.forEach(c => { 
+  let slides = c.querySelectorAll(".slide");
+  let currentSlide = 0;
+  let slideInterval = setInterval(() => {
     slides[currentSlide].className = 'slide';
     currentSlide = (currentSlide+1)%slides.length;
     slides[currentSlide].className = 'slide showing';
-}
+  },3700);
+});
