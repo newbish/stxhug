@@ -10,9 +10,11 @@
                                 <div class="column">
                                     <figure class="media-left">
                                         <ul id="slides">
-                                            {{ $isfirst := index (.Params.Photos) 0 }}
-                                            {{ range .Params.Photos }}
-                                                <li class="slide{{ if eq . $isfirst }} showing{{ end }}"><img src="/{{ . }}" /></li>
+                                            {{ $path := .Params.Photos }}
+                                            {{ $staticPath := (printf "static/%s" $path) }}
+                                            {{ $isfirst := index (readDir $staticPath) 0 }}
+                                            {{ range (readDir $staticPath) }}
+                                                <li class="slide{{ if eq . $isfirst }} showing{{ end }}"><img src="/{{ $path }}/{{ .Name }}" /></li>
                                             {{ end }}
                                         </ul>
                                     </figure>
