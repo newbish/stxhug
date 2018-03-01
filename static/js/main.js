@@ -1,13 +1,5 @@
-jQuery(document).ready(function ($) {
-
-  var $toggle = $('#navbar-toggle');
-  var $menu = $('#navbar-menu');
-
-  $toggle.click(function() {
-    $(this).toggleClass('is-active');
-    $menu.toggleClass('is-active');
-  });
-});
+var $toggle = document.querySelector("#navbar-toggle");
+var $menu = document.querySelector("#navbar-menu");
 
 // Toggles
 
